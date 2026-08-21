@@ -127,8 +127,15 @@
 
           <button class="booking-submit" type="submit">提交咨询</button>
           <p class="form-message form-error" data-booking-error hidden>请完整填写姓名、11 位手机号和需求。</p>
-          <p class="form-message form-success" data-booking-success hidden>提交成功！我们会尽快联系你。</p>
+          <p class="form-message form-success" data-booking-success hidden>已添加到本机预约记录。</p>
         </form>
+
+        <div class="booking-records" data-booking-records>
+          <h3>本机预约记录</h3>
+          <p class="booking-storage-note">练习版：记录仅保存在当前浏览器，不会发送给店铺。</p>
+          <p data-booking-record-empty>暂无预约记录。</p>
+          <ul class="booking-record-list" data-booking-record-list></ul>
+        </div>
       </section>
 
       <section class="content-section">

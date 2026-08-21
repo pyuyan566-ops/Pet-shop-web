@@ -505,6 +505,63 @@ h2 {
   color: #4b8a61;
 }
 
+.booking-records {
+  max-width: 620px;
+  margin-top: 32px;
+  padding: 20px;
+  border: 1px solid #ffe0d1;
+  border-radius: 18px;
+  background: #fffaf7;
+}
+
+.booking-records h3 {
+  margin: 0;
+  color: #9a573e;
+  font-size: 20px;
+}
+
+.booking-storage-note {
+  margin: 8px 0 16px;
+  color: #7d6257;
+  font-size: 14px;
+}
+
+.booking-record-list {
+  display: grid;
+  gap: 12px;
+  margin: 16px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.booking-record-item {
+  padding: 16px;
+  border-radius: 14px;
+  background: #ffffff;
+}
+
+.booking-record-item strong {
+  color: #754a37;
+}
+
+.booking-record-item p {
+  margin: 8px 0 0;
+  color: #7d6257;
+}
+
+.booking-record-delete {
+  margin-top: 12px;
+  padding: 8px 12px;
+  border: 1px solid #ffb7a5;
+  border-radius: 999px;
+  background: #ffffff;
+  color: #c35c53;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
 .notice-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
