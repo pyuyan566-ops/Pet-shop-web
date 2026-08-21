@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>商品详情 - 派特宠物超市</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="subpage detail-page">
+      <div class="detail-topbar">
+        <a class="back-home" href="index.html">返回首页</a>
+        <a class="cart-toggle" href="index.html#shopping-cart">购物车（<span data-cart-count>0</span>）</a>
+      </div>
+
+      <article class="detail-card" data-product-detail="dog-food">
+        <img src="product-dog-food-real.jpg" alt="Real Dog 成犬犬粮包装" />
+        <div>
+          <p class="subpage-brand">派特推荐</p>
+          <h1>成犬犬粮</h1>
+          <p>适合日常喂养的成犬粮食，选购时请结合宠物体型、年龄与日常活动量。</p>
+          <p class="detail-price">参考价：¥89</p>
+          <button class="product-add-button" type="button" data-product-name="成犬犬粮" data-product-price="89">加入购物车</button>
+        </div>
+      </article>
+
+      <article class="detail-card" data-product-detail="cat-food">
+        <img src="product-cat-food-real.png" alt="Meat Up 成猫猫粮包装" />
+        <div>
+          <p class="subpage-brand">派特推荐</p>
+          <h1>成猫猫粮</h1>
+          <p>适合成猫日常食用，开封后请密封保存，并根据宠物实际情况调整喂食量。</p>
+          <p class="detail-price">参考价：¥79</p>
+          <button class="product-add-button" type="button" data-product-name="成猫猫粮" data-product-price="79">加入购物车</button>
+        </div>
+      </article>
+
+      <article class="detail-card" data-product-detail="chew">
+        <img src="product-chew-real.jpg" alt="牛皮磨牙骨" />
+        <div>
+          <p class="subpage-brand">派特推荐</p>
+          <h1>牛皮磨牙骨</h1>
+          <p>帮助满足宠物啃咬需求。请根据宠物体型选择合适尺寸，并在陪同下使用。</p>
+          <p class="detail-price">参考价：¥29</p>
+          <button class="product-add-button" type="button" data-product-name="牛皮磨牙骨" data-product-price="29">加入购物车</button>
+        </div>
+      </article>
+
+      <article class="detail-card" data-product-detail="toy">
+        <img src="product-toy-real.webp" alt="蓝色宠物玩具球" />
+        <div>
+          <p class="subpage-brand">派特推荐</p>
+          <h1>宠物玩具球</h1>
+          <p>适合互动玩耍与日常消耗精力。请定期检查玩具是否破损，及时更换。</p>
+          <p class="detail-price">参考价：¥39</p>
+          <button class="product-add-button" type="button" data-product-name="宠物玩具球" data-product-price="39">加入购物车</button>
+        </div>
+      </article>
+
+      <p class="form-message form-success" data-detail-added hidden>已加入购物车！你可以返回首页查看清单。</p>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>

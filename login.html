@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>登录 - 派特宠物超市</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="subpage login-page">
+      <p class="subpage-brand">🐾 派特宠物超市</p>
+      <h1>演示登录</h1>
+      <p>这是网页练习功能：不会保存用户名或密码，也不是真实账号系统。</p>
+      <form class="booking-form" data-login-form novalidate>
+        <label for="login-username">用户名</label>
+        <input id="login-username" name="username" type="text" placeholder="请输入用户名" />
+
+        <label for="login-password">密码</label>
+        <input id="login-password" name="password" type="password" placeholder="请输入密码" />
+
+        <button class="booking-submit" type="submit">演示登录</button>
+        <p class="form-message form-error" data-login-error hidden>请填写用户名和密码。</p>
+        <p class="form-message form-success" data-login-success hidden>演示登录成功！实际网站需要服务器才能创建真实账号。</p>
+      </form>
+      <a class="back-home" href="index.html">返回店铺首页</a>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
