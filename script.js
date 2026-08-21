@@ -44,31 +44,6 @@ var PetCart = (function () {
     return String(value || "").replace(/^\s+|\s+$/g, "") !== "";
   }
 
-  function isBookingValid(name, phone, message) {
-    return hasText(name) && /^1\d{10}$/.test(phone) && hasText(message);
-  }
-
-  function addBookingRecord(records, record) {
-    return records.concat([{
-      name: record.name,
-      phone: record.phone,
-      message: record.message
-    }]);
-  }
-
-  function removeBookingRecord(records, recordIndex) {
-    var remaining = [];
-    var index;
-
-    for (index = 0; index < records.length; index += 1) {
-      if (index !== recordIndex) {
-        remaining.push(records[index]);
-      }
-    }
-
-    return remaining;
-  }
-
   function hasLoginInput(username, password) {
     return hasText(username) && hasText(password);
   }
@@ -83,9 +58,6 @@ var PetCart = (function () {
     getTotal: getTotal,
     serialize: serialize,
     deserialize: deserialize,
-    isBookingValid: isBookingValid,
-    addBookingRecord: addBookingRecord,
-    removeBookingRecord: removeBookingRecord,
     hasLoginInput: hasLoginInput,
     getProduct: getProduct
   };
@@ -174,99 +146,6 @@ if (typeof document !== "undefined") {
       renderCart();
     }
 
-    function initBookingForm() {
-      var form = document.querySelector("[data-booking-form]");
-      var error = document.querySelector("[data-booking-error]");
-      var success = document.querySelector("[data-booking-success]");
-      var list = document.querySelector("[data-booking-record-list]");
-      var empty = document.querySelector("[data-booking-record-empty]");
-      var records = [];
-
-      if (!form) {
-        return;
-      }
-
-      try {
-        records = PetCart.deserialize(localStorage.getItem("pet-shop-booking-records") || "[]");
-      } catch (error) {
-        records = [];
-      }
-
-      function saveRecords() {
-        try {
-          localStorage.setItem("pet-shop-booking-records", PetCart.serialize(records));
-        } catch (error) {
-          return;
-        }
-      }
-
-      function renderRecords() {
-        var index;
-
-        if (list) {
-          list.innerHTML = "";
-        }
-        if (empty) {
-          empty.hidden = records.length > 0;
-        }
-
-        for (index = 0; index < records.length; index += 1) {
-          var item = document.createElement("li");
-          var title = document.createElement("strong");
-          var phone = document.createElement("p");
-          var message = document.createElement("p");
-          var deleteButton = document.createElement("button");
-
-          item.className = "booking-record-item";
-          title.textContent = records[index].name + " \u7684\u54a8\u8be2";
-          phone.textContent = "\u7535\u8bdd\uff1a" + records[index].phone;
-          message.textContent = "\u9700\u6c42\uff1a" + records[index].message;
-          deleteButton.className = "booking-record-delete";
-          deleteButton.type = "button";
-          deleteButton.textContent = "\u5220\u9664\u8fd9\u6761\u8bb0\u5f55";
-
-          (function (recordIndex) {
-            deleteButton.addEventListener("click", function () {
-              records = PetCart.removeBookingRecord(records, recordIndex);
-              saveRecords();
-              renderRecords();
-            });
-          }(index));
-
-          item.appendChild(title);
-          item.appendChild(phone);
-          item.appendChild(message);
-          item.appendChild(deleteButton);
-          if (list) {
-            list.appendChild(item);
-          }
-        }
-      }
-
-      form.addEventListener("submit", function (event) {
-        event.preventDefault();
-        error.hidden = true;
-        success.hidden = true;
-
-        if (!PetCart.isBookingValid(form.elements.name.value, form.elements.phone.value, form.elements.message.value)) {
-          error.hidden = false;
-          return;
-        }
-
-        records = PetCart.addBookingRecord(records, {
-          name: form.elements.name.value,
-          phone: form.elements.phone.value,
-          message: form.elements.message.value
-        });
-        saveRecords();
-        renderRecords();
-        success.hidden = false;
-        form.reset();
-      });
-
-      renderRecords();
-    }
-
     function initLoginForm() {
       var form = document.querySelector("[data-login-form]");
       var error = document.querySelector("[data-login-error]");
@@ -311,7 +190,6 @@ if (typeof document !== "undefined") {
       initCart();
     }
 
-    initBookingForm();
     initLoginForm();
     initProductDetail();
   });

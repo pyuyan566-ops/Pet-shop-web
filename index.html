@@ -114,27 +114,11 @@
 
       <section class="content-section booking-section">
         <h2>🐾 预约咨询</h2>
-        <p>填写下面的信息，我们会尽快为你提供商品选购建议。</p>
-        <form class="booking-form" data-booking-form novalidate>
-          <label for="booking-name">姓名</label>
-          <input id="booking-name" name="name" type="text" placeholder="请输入你的姓名" />
-
-          <label for="booking-phone">电话</label>
-          <input id="booking-phone" name="phone" type="tel" placeholder="请输入 11 位手机号" />
-
-          <label for="booking-message">需求</label>
-          <textarea id="booking-message" name="message" rows="4" placeholder="例如：想为幼犬挑选合适的粮食"></textarea>
-
-          <button class="booking-submit" type="submit">提交咨询</button>
-          <p class="form-message form-error" data-booking-error hidden>请完整填写姓名、11 位手机号和需求。</p>
-          <p class="form-message form-success" data-booking-success hidden>已添加到本机预约记录。</p>
-        </form>
-
-        <div class="booking-records" data-booking-records>
-          <h3>本机预约记录</h3>
-          <p class="booking-storage-note">练习版：记录仅保存在当前浏览器，不会发送给店铺。</p>
-          <p data-booking-record-empty>暂无预约记录。</p>
-          <ul class="booking-record-list" data-booking-record-list></ul>
+        <p>填写预约表单后，我们会根据宠物情况为你提供商品选购建议。</p>
+        <div class="real-booking-card">
+          <h3>开始预约</h3>
+          <p>点击下方按钮，在新页面填写姓名、手机号和咨询需求。</p>
+          <a class="booking-submit booking-link" data-real-booking-link href="https://docs.google.com/forms/d/e/1FAIpQLScH0HTE7hrrTwsPEF9YJlmVqtQefgj1YRg_0Ld0O1jvjLXT7w/viewform" target="_blank" rel="noopener">立即填写预约表单</a>
         </div>
       </section>
 
